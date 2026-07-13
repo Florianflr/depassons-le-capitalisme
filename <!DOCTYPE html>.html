@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dépassons le capitalisme</title>
+    <style>
+        /* Importation d'une police d'impact style affiche de propagande */
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Montserrat:wght@400;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Arrière-plan généré (avec dégradé de secours si l'image charge lentement) */
+            background: linear-gradient(135deg, rgba(150, 8, 18, 0.95), rgba(40, 0, 4, 0.98)), 
+                        url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #FFF;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Superposition de lignes dynamiques pour l'effet technologique */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 999;
+            background-size: 100% 4px, 6px 100%;
+            pointer-events: none;
+        }
+
+        /* Conteneur Principal (Effet bloc néo-brutaliste) */
+        .main-container {
+            background: rgba(206, 17, 38, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 3px solid #FCD116;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(252, 209, 22, 0.2);
+            max-width: 1000px;
+            width: 90%;
+            margin: 50px 20px;
+            padding: 40px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        /* Coin décoratif type industriel / technologique */
+        .main-container::after {
+            content: '★';
+            position: absolute;
+            top: -15px; left: 50%;
+            transform: translateX(-50%);
+            background: #FCD116;
+            color: #CE1126;
+            font-size: 1.5rem;
+            padding: 2px 15px;
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+            font-weight: bold;
+        }
+
+        /* Titre Révolutionnaire */
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0 0 10px 0;
+            color: #FCD116;
+            text-shadow: 4px 4px 0px #000, 0 0 20px rgba(252, 209, 22, 0.6);
+            transform: skewX(-5deg);
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5em; }
+        }
+
+        /* Portrait de Marx Stylisé */
+        .marx-frame {
+            position: relative;
+            display: inline-block;
+            margin: 30px 0;
+        }
+
+        .marx-photo {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #FCD116;
+            box-shadow: 0 0 30px rgba(252, 209, 22, 0.4), 0 10px 20px rgba(0,0,0,0.6);
+            filter: grayscale(30%) contrast(120%);
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .marx-frame:hover .marx-photo {
+            filter: grayscale(0%) contrast(130%);
+            transform: scale(1.03) rotate(3deg);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+
+        /* Grille des Liens Dynamique */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            width: 100%;
+        }
+
+        /* Boutons Futuristes */
+        a.btn {
+            background: rgba(0, 0, 0, 0.6);
+            color: #FFF;
+            text-decoration: none;
+            padding: 18px 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-left: 5px solid #FCD116;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.5);
+            border-right: 1px solid rgba(0,0,0,0.5);
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Effet de reflet au survol */
+        a.btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(252, 209, 22, 0.2), transparent);
+            transition: all 0.4s ease;
+        }
+
+        .btn img {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            background-color: #fff;
+            padding: 3px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover State : L'émancipation visuelle */
+        a.btn:hover {
+            background: #FCD116;
+            color: #000;
+            border-left-color: #FFF;
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(252, 209, 22, 0.3), 4px 4px 0px #000;
+        }
+
+        a.btn:hover::before {
+            left: 100%;
+        }
+
+        a.btn:hover img {
+            transform: scale(1.1) rotate(-5deg);
+            background-color: #000;
+        }
+
+        /* Pied de page avant-gardiste */
+        footer {
+            margin-top: auto;
+            padding: 30px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1em;
+            color: #FCD116;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Dépassons le capitalisme</h1>
+        
+        <div class="marx-frame">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Karl_Marx_001.jpg" alt="Karl Marx" class="marx-photo">
+        </div>
+
+        <div class="subtitle">Portail de redirection vers les infrastructures numériques</div>
+
+        <div class="links-grid">
+            <a href="https://www.youtube.com" target="_blank" class="btn">
+                <img src="https://www.google.com/s2/favicons?domain=youtube.com&sz=64" alt="YouTube">
+                YouTube
+            </a>
+            
+            <a href="https://www.les-philosophes.fr" target="_blank" class="btn">
+                <img src="https://www.google.com/s2/favicons?domain=les-philosophes.fr&sz=64" alt="Les Philosophes">
+                Les Philosophes
+            </a>
+            
+            <a href="https://gemini.google.com" target="_blank" class="btn">
+                <img src="https://www.google.com/s2/favicons?domain=gemini.google.com&sz=64" alt="Gemini">
+                Gemini
+            </a>
+            
+            <a href="https://chatgpt.com" target="_blank" class="btn">
+                <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT">
+                ChatGPT
+            </a>
+            
+            <a href="https://sushiscan.net" target="_blank" class="btn">
+                <img src="https://www.google.com/s2/favicons?domain=sushiscan.net&sz=64" alt="Sushi Scan">
+                Sushi Scan
+            </a>
+            
+            <a href="https://www.duolingo.com" target="_blank" class="btn">
+                <img src="https://www.google.com/s2/favicons?domain=duolingo.com&sz=64" alt="Duolingo">
+                Duolingo
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        ★ Prolétaires de tous les pays, unissez-vous ! ★
+    </footer>
+
+</body>
+</html>
