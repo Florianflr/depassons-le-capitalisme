@@ -13,7 +13,7 @@
         }
 
         body {
-            /* Arrière-plan généré (avec dégradé de secours si l'image charge lentement) */
+            /* Arrière-plan de secours (dégradé) et image */
             background: linear-gradient(135deg, rgba(150, 8, 18, 0.95), rgba(40, 0, 4, 0.98)), 
                         url('background.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -28,7 +28,7 @@
             overflow-x: hidden;
         }
 
-        /* Superposition de lignes dynamiques pour l'effet technologique */
+        /* Effet de lignes rétro (CRT) */
         body::before {
             content: "";
             position: fixed;
@@ -39,7 +39,7 @@
             pointer-events: none;
         }
 
-        /* Conteneur Principal (Effet bloc néo-brutaliste) */
+        /* Conteneur Principal */
         .main-container {
             background: rgba(206, 17, 38, 0.15);
             backdrop-filter: blur(12px);
@@ -54,7 +54,6 @@
             position: relative;
         }
 
-        /* Coin décoratif type industriel / technologique */
         .main-container::after {
             content: '★';
             position: absolute;
@@ -68,7 +67,7 @@
             font-weight: bold;
         }
 
-        /* Titre Révolutionnaire */
+        /* Titre */
         h1 {
             font-family: 'Oswald', sans-serif;
             font-size: 4em;
@@ -85,7 +84,7 @@
             h1 { font-size: 2.5em; }
         }
 
-        /* Portrait de Marx Stylisé */
+        /* Portrait de Marx */
         .marx-frame {
             position: relative;
             display: inline-block;
@@ -118,7 +117,7 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
-        /* Grille des Liens Dynamique */
+        /* Grille des Liens */
         .links-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -126,14 +125,14 @@
             width: 100%;
         }
 
-        /* Boutons Futuristes */
+        /* Boutons */
         a.btn {
             background: rgba(0, 0, 0, 0.6);
             color: #FFF;
             text-decoration: none;
             padding: 18px 20px;
             font-family: 'Oswald', sans-serif;
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: bold;
             border-left: 5px solid #FCD116;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -150,7 +149,6 @@
             overflow: hidden;
         }
 
-        /* Effet de reflet au survol */
         a.btn::before {
             content: '';
             position: absolute;
@@ -169,7 +167,7 @@
             transition: transform 0.3s ease;
         }
 
-        /* Hover State : L'émancipation visuelle */
+        /* Animations au survol */
         a.btn:hover {
             background: #FCD116;
             color: #000;
@@ -187,7 +185,7 @@
             background-color: #000;
         }
 
-        /* Pied de page avant-gardiste */
+        /* Pied de page */
         footer {
             margin-top: auto;
             padding: 30px;
@@ -230,6 +228,12 @@
             <a href="https://chatgpt.com" target="_blank" class="btn">
                 <img src="https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" alt="ChatGPT">
                 ChatGPT
+            </a>
+
+            <!-- Nouveau lien ajouté ici -->
+            <a href="https://blog.mondediplo.net/-La-pompe-a-phynance-#pagination_posts" target="_blank" class="btn">
+                <img src="https://www.google.com/s2/favicons?domain=mondediplo.net&sz=64" alt="La Pompe à Phynance">
+                La Pompe à Phynance
             </a>
             
             <a href="https://sushiscan.net" target="_blank" class="btn">
